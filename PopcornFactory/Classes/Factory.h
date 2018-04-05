@@ -12,11 +12,13 @@
 @interface Factory : NSObject
 
 @property bool working;
+@property int timeProducing;
 @property NSMutableArray<Product *> *slot;
 @property NSMutableArray<Product *> *stock;
 
--(void) manufacture:(Product *) aProduct;
+
+-(void) manufacture:(Product *) aProduct withTipe:(int) aType;
 -(void) request:(Product *) aProduct;
--(void) startTimet:(int) aTimer;
+-(void) startTimer:(int) aTimer;
 -(bool) verifyStock;
 @end

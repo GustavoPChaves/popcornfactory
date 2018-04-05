@@ -12,9 +12,10 @@
 @interface Product : NSObject
 
 @property NSString *name;
-@property int timer;
 @property int type;
+@property int timer;
 @property NSMutableArray<Feedstock *> *recipe;
 
+-(id) initWithName:(NSString *) aName andType:(int) aType andTimer:(int) aTimer;
 
 @end

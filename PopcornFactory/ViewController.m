@@ -8,21 +8,32 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-
+@interface ViewController (){
+Factory *factory;
+    Product *popcorn;
+    Product *snack;
+    Product *driedTomato;
+}
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-
-- (void)didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
+	
+    factory = [[Factory alloc] init];
+    
+    popcorn = [[Product alloc ] initWithName:@"Pipoca" andType:0 andTimer:5];
+    snack = [[Product alloc ] initWithName:@"Salgadinho" andType:1 andTimer:10];
+    driedTomato = [[Product alloc ] initWithName:@"Tomate Seca" andType:2 andTimer:15];
+    
+    [[factory slot] addObject:popcorn];
+    [[factory slot] addObject:snack];
+    [[factory slot] addObject:driedTomato];
+    
+    [factory manufacture:popcorn withTipe:0];
+    
+    
 }
 
 

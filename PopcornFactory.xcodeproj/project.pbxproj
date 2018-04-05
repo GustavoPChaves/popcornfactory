@@ -94,8 +94,8 @@
 				BE1F316C20764C9B004E78A5 /* Product.m */,
 				BE1F3173207653B1004E78A5 /* Factory.h */,
 				BE1F3174207653B1004E78A5 /* Factory.m */,
-				BE1F317620765A20004E78A5 /* Feedstock.h */,
 				BE1F317720765A20004E78A5 /* Feedstock.m */,
+				BE1F317620765A20004E78A5 /* Feedstock.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -459,6 +459,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9TV25TFN7;
 				INFOPLIST_FILE = PopcornFactory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gchaves.PopcornFactory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -473,6 +474,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9TV25TFN7;
 				INFOPLIST_FILE = PopcornFactory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gchaves.PopcornFactory;
 				PRODUCT_NAME = "$(TARGET_NAME)";

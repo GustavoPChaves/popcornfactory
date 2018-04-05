@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Product.h"
+#import "Factory.h"
+#import "Feedstock.h"
+
 
 @interface ViewController : UIViewController
 
