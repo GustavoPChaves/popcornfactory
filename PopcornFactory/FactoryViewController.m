@@ -11,6 +11,7 @@
 @interface FactoryViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *qtdSlot;
 
 @property BOOL working;
 @property int time;
@@ -37,16 +38,26 @@
     NSInteger bTag = button.tag;
     int type = (int) bTag;
     Product *p;
-    switch (type) {
-        case 0:
-            
-            //[_slot addObject:;
-            break;
-            
-        default:
-            break;
+    if([_slot count] < 6){
+        switch (type) {
+            case 0:
+                p = [[Product alloc ] initWithName:@"Pipoca" andType:0 andTimer:5];
+                [_slot addObject:p];
+                break;
+            case 1:
+                p = [[Product alloc ] initWithName:@"Salgadinho" andType:1 andTimer:10];
+                [_slot addObject:p];
+                break;
+            case 2:
+                p = [[Product alloc ] initWithName:@"Tomate Seco" andType:2 andTimer:15];
+                [_slot addObject:p];
+                break;
+        }
     }
-    
+    [_qtdSlot setText:  [NSString stringWithFormat:@"%lu",[_slot count]] ];
+        
+}
+- (IBAction)removeProductInStock:(id)sender {
 }
 
 - (void)viewDidLoad {
@@ -62,9 +73,6 @@
     [_slot addObject:popcorn];
 }
 
-- (void) functionName:(UIButton *) sender {
-	int var = 0;
-}
 //MARK: - factory functions
 - (void) manufactureWithType: (int) type{
 	if(!_working && [_stock count] < 4){
@@ -95,13 +103,15 @@
 		}
 
         if(found){
+            
             _working = YES;
             printf(" found");
             [_slot removeObjectAtIndex:index];
-            
+            [_qtdSlot setText:  [NSString stringWithFormat:@"%lu",[_slot count]] ];
             [self startTimer: product.timer];
             
             [_stock addObject:product];
+            
             //printf("%d",[product timer]);
             
             //[self startTimer: product.timer];

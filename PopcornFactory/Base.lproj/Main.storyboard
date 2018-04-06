@@ -94,17 +94,57 @@
                                     <action selector="addRecipeToSlot:" destination="fDz-IZ-siZ" eventType="touchUpInside" id="Y9o-dj-roM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="qtdSlot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXG-2P-d7f">
+                                <rect key="frame" x="214" y="66" width="56" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LD-ve-sZw">
+                                <rect key="frame" x="547" y="32" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="btn0"/>
+                                <connections>
+                                    <action selector="removeProductInStock:" destination="fDz-IZ-siZ" eventType="touchUpInside" id="10a-T2-x25"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFd-pX-g6a">
+                                <rect key="frame" x="548" y="70" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="btn1"/>
+                                <connections>
+                                    <action selector="removeProductInStock:" destination="fDz-IZ-siZ" eventType="touchUpInside" id="Gzj-uS-6ck"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adv-0e-sjX">
+                                <rect key="frame" x="547" y="108" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="btn2"/>
+                                <connections>
+                                    <action selector="removeProductInStock:" destination="fDz-IZ-siZ" eventType="touchUpInside" id="jEW-3U-wst"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49u-Ci-Wgw">
+                                <rect key="frame" x="547" y="146" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="btn3"/>
+                                <connections>
+                                    <action selector="removeProductInStock:" destination="fDz-IZ-siZ" eventType="touchUpInside" id="Q6J-Q8-OHF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vKP-b1-HAa"/>
                     </view>
                     <connections>
+                        <outlet property="qtdSlot" destination="AXG-2P-d7f" id="Kpb-bj-AAf"/>
                         <outlet property="timerLabel" destination="rfA-kP-88V" id="I3F-RZ-g70"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CAK-Me-5hL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="-1"/>
+            <point key="canvasLocation" x="870.31484257871068" y="-2.3999999999999999"/>
         </scene>
     </scenes>
 </document>
