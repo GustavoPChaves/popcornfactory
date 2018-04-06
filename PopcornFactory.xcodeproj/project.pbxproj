@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		705C6B042076C06100D82B11 /* FactoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705C6B032076C06100D82B11 /* FactoryViewController.m */; };
 		BE1F316D20764C9B004E78A5 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1F316C20764C9B004E78A5 /* Product.m */; };
 		BE1F3175207653B1004E78A5 /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1F3174207653B1004E78A5 /* Factory.m */; };
 		BE1F317820765A20004E78A5 /* Feedstock.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1F317720765A20004E78A5 /* Feedstock.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		705C6B022076C06100D82B11 /* FactoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FactoryViewController.h; sourceTree = "<group>"; };
+		705C6B032076C06100D82B11 /* FactoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FactoryViewController.m; sourceTree = "<group>"; };
 		BE1F316B20764C9B004E78A5 /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		BE1F316C20764C9B004E78A5 /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		BE1F3173207653B1004E78A5 /* Factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				BE55932A2076449B002EBFAD /* LaunchScreen.storyboard */,
 				BE55932D2076449B002EBFAD /* Info.plist */,
 				BE55932E2076449B002EBFAD /* main.m */,
+				705C6B022076C06100D82B11 /* FactoryViewController.h */,
+				705C6B032076C06100D82B11 /* FactoryViewController.m */,
 			);
 			path = PopcornFactory;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				BE1F317820765A20004E78A5 /* Feedstock.m in Sources */,
 				BE1F316D20764C9B004E78A5 /* Product.m in Sources */,
 				BE55932F2076449B002EBFAD /* main.m in Sources */,
+				705C6B042076C06100D82B11 /* FactoryViewController.m in Sources */,
 				BE5593212076449B002EBFAD /* AppDelegate.m in Sources */,
 				BE1F3175207653B1004E78A5 /* Factory.m in Sources */,
 			);
