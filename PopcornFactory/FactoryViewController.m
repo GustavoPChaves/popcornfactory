@@ -9,12 +9,20 @@
 #import "FactoryViewController.h"
 
 @interface FactoryViewController ()
-
+//MARK: - outlets
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *qtdSlot;
 
+@property (weak, nonatomic) IBOutlet UIButton *stock1Button;
+@property (weak, nonatomic) IBOutlet UIButton *stock2Button;
+@property (weak, nonatomic) IBOutlet UIButton *stock3Button;
+@property (weak, nonatomic) IBOutlet UIButton *stock4Button;
+
 @property BOOL working;
 @property int time;
+@property NSMutableArray *buttonsStock;
+@property NSMutableDictionary *buttons;
+
 
 @end
 
@@ -26,6 +34,7 @@
 //	int type = (int) bTag;
 //	[self manufactureWithType: type];
 //}
+//MARK: - actions
 - (IBAction)manufactureActionn:(id)sender {
 	UIButton *button = (UIButton *)sender;
 	NSInteger bTag = button.tag;
@@ -33,6 +42,7 @@
 	int type = (int) bTag;
 	[self manufactureWithType: type];
 }
+
 - (IBAction)addRecipeToSlot:(id)sender {
     UIButton *button = (UIButton *)sender;
     NSInteger bTag = button.tag;
@@ -57,9 +67,7 @@
     [_qtdSlot setText:  [NSString stringWithFormat:@"%lu",[_slot count]] ];
         
 }
-- (IBAction)removeProductInStock:(id)sender {
-}
-
+//MARK: - didload
 - (void)viewDidLoad {
 	[super viewDidLoad];
     
@@ -68,6 +76,8 @@
 	_stock = [[NSMutableArray alloc] init];
 	_working = NO;
     
+    //set stock buttons target
+    [_stock1Button addTarget: self action: @selector(removeFromStock:) forControlEvents: UIControlEventTouchUpInside];
     Product *popcorn;
     popcorn = [[Product alloc ] initWithName:@"Pipoca" andType:0 andTimer:5];
     [_slot addObject:popcorn];
@@ -75,6 +85,8 @@
 
 //MARK: - factory functions
 - (void) manufactureWithType: (int) type{
+    
+    
 	if(!_working && [_stock count] < 4){
 		int index = -1;
 		bool found = false;
@@ -112,6 +124,25 @@
             
             [_stock addObject:product];
             
+            int qtdStock = (int) [_stock count];
+            
+            switch (qtdStock) {
+                case 1:
+                    [_stock1Button setHidden: NO];
+        
+                    break;
+                case 2:
+                    [_stock2Button setHidden: NO];
+                    break;
+                case 3:
+                    [_stock3Button setHidden: NO];
+                    break;
+                case 4:
+                    [_stock4Button setHidden: NO];
+                    break;
+                default:
+                    break;
+            }
             //printf("%d",[product timer]);
             
             //[self startTimer: product.timer];
@@ -144,6 +175,13 @@
 -(bool) verifyStock{
 	
 	return [_stock count] == 0;
+}
+
+- (void) removeFromStock: (UIButton *) sender{
+    [sender setHidden: YES];
+    Product *p_nil = nil;
+    [_stock replaceObjectAtIndex:sender.tag withObject:p_nil];
+    //[_stock removeObjectAtIndex: sender.tag];
 }
 
 //MARK: - timer funcions

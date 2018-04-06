@@ -105,33 +105,21 @@
                                 <rect key="frame" x="547" y="32" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="btn0"/>
-                                <connections>
-                                    <action selector="removeProductInStock:" destination="fDz-IZ-siZ" eventType="touchUpInside" id="10a-T2-x25"/>
-                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFd-pX-g6a">
                                 <rect key="frame" x="548" y="70" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="btn1"/>
-                                <connections>
-                                    <action selector="removeProductInStock:" destination="fDz-IZ-siZ" eventType="touchUpInside" id="Gzj-uS-6ck"/>
-                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adv-0e-sjX">
                                 <rect key="frame" x="547" y="108" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="btn2"/>
-                                <connections>
-                                    <action selector="removeProductInStock:" destination="fDz-IZ-siZ" eventType="touchUpInside" id="jEW-3U-wst"/>
-                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49u-Ci-Wgw">
                                 <rect key="frame" x="547" y="146" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="btn3"/>
-                                <connections>
-                                    <action selector="removeProductInStock:" destination="fDz-IZ-siZ" eventType="touchUpInside" id="Q6J-Q8-OHF"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -139,6 +127,10 @@
                     </view>
                     <connections>
                         <outlet property="qtdSlot" destination="AXG-2P-d7f" id="Kpb-bj-AAf"/>
+                        <outlet property="stock1Button" destination="8LD-ve-sZw" id="SXq-vB-BIz"/>
+                        <outlet property="stock2Button" destination="OFd-pX-g6a" id="9JZ-jF-Z07"/>
+                        <outlet property="stock3Button" destination="Adv-0e-sjX" id="tCR-lg-yRX"/>
+                        <outlet property="stock4Button" destination="49u-Ci-Wgw" id="pMy-uP-gkl"/>
                         <outlet property="timerLabel" destination="rfA-kP-88V" id="I3F-RZ-g70"/>
                     </connections>
                 </viewController>
