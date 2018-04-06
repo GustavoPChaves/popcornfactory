@@ -33,6 +33,20 @@
 	[self manufactureWithType: type];
 }
 - (IBAction)addRecipeToSlot:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    NSInteger bTag = button.tag;
+    int type = (int) bTag;
+    Product *p;
+    switch (type) {
+        case 0:
+            
+            //[_slot addObject:;
+            break;
+            
+        default:
+            break;
+    }
+    
 }
 
 - (void)viewDidLoad {
