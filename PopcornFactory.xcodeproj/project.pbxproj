@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		BE5593212076449B002EBFAD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5593202076449B002EBFAD /* AppDelegate.m */; };
 		BE5593242076449B002EBFAD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5593232076449B002EBFAD /* ViewController.m */; };
-		BE5593272076449B002EBFAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5593252076449B002EBFAD /* Main.storyboard */; };
+		BE5593272076449B002EBFAD /* UIExample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5593252076449B002EBFAD /* UIExample.storyboard */; };
 		BE5593292076449B002EBFAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5593282076449B002EBFAD /* Assets.xcassets */; };
 		BE55932C2076449B002EBFAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE55932A2076449B002EBFAD /* LaunchScreen.storyboard */; };
 		BE55932F2076449B002EBFAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE55932E2076449B002EBFAD /* main.m */; };
@@ -40,7 +40,7 @@
 		BE5593202076449B002EBFAD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BE5593222076449B002EBFAD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BE5593232076449B002EBFAD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BE5593262076449B002EBFAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE5593262076449B002EBFAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UIExample.storyboard; sourceTree = "<group>"; };
 		BE5593282076449B002EBFAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE55932B2076449B002EBFAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE55932D2076449B002EBFAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				BE5593202076449B002EBFAD /* AppDelegate.m */,
 				BE5593222076449B002EBFAD /* ViewController.h */,
 				BE5593232076449B002EBFAD /* ViewController.m */,
-				BE5593252076449B002EBFAD /* Main.storyboard */,
+				BE5593252076449B002EBFAD /* UIExample.storyboard */,
 				BE5593282076449B002EBFAD /* Assets.xcassets */,
 				BE55932A2076449B002EBFAD /* LaunchScreen.storyboard */,
 				BE55932D2076449B002EBFAD /* Info.plist */,
@@ -240,7 +240,7 @@
 			files = (
 				BE55932C2076449B002EBFAD /* LaunchScreen.storyboard in Resources */,
 				BE5593292076449B002EBFAD /* Assets.xcassets in Resources */,
-				BE5593272076449B002EBFAD /* Main.storyboard in Resources */,
+				BE5593272076449B002EBFAD /* UIExample.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,12 +303,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BE5593252076449B002EBFAD /* Main.storyboard */ = {
+		BE5593252076449B002EBFAD /* UIExample.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BE5593262076449B002EBFAD /* Base */,
 			);
-			name = Main.storyboard;
+			name = UIExample.storyboard;
 			sourceTree = "<group>";
 		};
 		BE55932A2076449B002EBFAD /* LaunchScreen.storyboard */ = {
