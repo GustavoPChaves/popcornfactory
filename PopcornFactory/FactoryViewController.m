@@ -22,6 +22,7 @@
 @property int time;
 @property NSMutableArray *buttonsStock;
 @property NSMutableDictionary *buttons;
+@property int mult;
 
 
 @end
@@ -43,6 +44,15 @@
 	[self manufactureWithType: type];
 }
 
+- (IBAction)fastModeAction:(UISwitch *)sender {
+	if (sender.isOn){
+		_mult = 2;
+	}
+	else{
+		_mult = 1;
+	}
+}
+
 - (IBAction)addRecipeToSlot:(id)sender {
     UIButton *button = (UIButton *)sender;
     NSInteger bTag = button.tag;
@@ -51,15 +61,15 @@
     if([_slot count] < 6){
         switch (type) {
             case 0:
-                p = [[Product alloc ] initWithName:@"Pipoca" andType:0 andTimer:5];
+                p = [[Product alloc ] initWithName:@"Pipoca" andType:0 andTimer:80];
                 [_slot addObject:p];
                 break;
             case 1:
-                p = [[Product alloc ] initWithName:@"Salgadinho" andType:1 andTimer:10];
+                p = [[Product alloc ] initWithName:@"Salgadinho" andType:1 andTimer:120];
                 [_slot addObject:p];
                 break;
             case 2:
-                p = [[Product alloc ] initWithName:@"Tomate Seco" andType:2 andTimer:15];
+                p = [[Product alloc ] initWithName:@"Tomate Seco" andType:2 andTimer:160];
                 [_slot addObject:p];
                 break;
         }
@@ -81,32 +91,37 @@
     Product *popcorn;
     popcorn = [[Product alloc ] initWithName:@"Pipoca" andType:0 andTimer:5];
     [_slot addObject:popcorn];
+	
+	_mult = 1;
 }
 
 //MARK: - factory functions
 - (void) manufactureWithType: (int) type{
     
     
-	if(!_working && [_stock count] < 4){
+	if(!_working){
 		int index = -1;
 		bool found = false;
+		_working = YES;
 		
 		Product *product;
 		
 		switch (type) {
 			case 0:
-				product = [[Product alloc ] initWithName:@"Pipoca" andType:0 andTimer:5];
+				product = [[Product alloc ] initWithName:@"Pipoca" andType:0 andTimer: 80];
 				break;
 			case 1:
-				product = [[Product alloc ] initWithName:@"Salgadinho" andType:1 andTimer:10];
+				product = [[Product alloc ] initWithName:@"Salgadinho" andType:1 andTimer:120];
 				break;
 			case 2:
-				product = [[Product alloc ] initWithName:@"Tomate Seca" andType:2 andTimer:15];
+				product = [[Product alloc ] initWithName:@"Tomate Seca" andType:2 andTimer:160];
 				break;
 			default:
 				break;
 		}
-		
+		[self startTimer: product.timer];
+	}
+		/*
 		for (Product *p in _slot) {
 			if(p.type == product.type && !found){
                 index++;
@@ -115,34 +130,32 @@
 		}
 
         if(found){
-            
-            _working = YES;
+           */
             printf(" found");
-            [_slot removeObjectAtIndex:index];
-            [_qtdSlot setText:  [NSString stringWithFormat:@"%lu",[_slot count]] ];
-            [self startTimer: product.timer];
+//            [_slot removeObjectAtIndex:index];
+//            [_qtdSlot setText:  [NSString stringWithFormat:@"%lu",[_slot count]] ];
             
-            [_stock addObject:product];
-            
-            int qtdStock = (int) [_stock count];
-            
-            switch (qtdStock) {
-                case 1:
-                    [_stock1Button setHidden: NO];
-        
-                    break;
-                case 2:
-                    [_stock2Button setHidden: NO];
-                    break;
-                case 3:
-                    [_stock3Button setHidden: NO];
-                    break;
-                case 4:
-                    [_stock4Button setHidden: NO];
-                    break;
-                default:
-                    break;
-            }
+//            [_stock addObject:product];
+		
+//            int qtdStock = (int) [_stock count];
+//
+//            switch (qtdStock) {
+//                case 1:
+//                    [_stock1Button setHidden: NO];
+//
+//                    break;
+//                case 2:
+//                    [_stock2Button setHidden: NO];
+//                    break;
+//                case 3:
+//                    [_stock3Button setHidden: NO];
+//                    break;
+//                case 4:
+//                    [_stock4Button setHidden: NO];
+//                    break;
+//                default:
+//                    break;
+//            }
             //printf("%d",[product timer]);
             
             //[self startTimer: product.timer];
@@ -156,12 +169,12 @@
             
             //[_stock addObject:aProduct];
             
-        }else{
-            //not found
-        }
+//        }else{
+//            //not found
+//        }
+		
         
-        
-	}
+//	}
 }
 
 -(void) request:(Product *) aProduct{
@@ -186,17 +199,17 @@
 
 //MARK: - timer funcions
 - (void) startTimer: (int)product {
-	_time = product;
+	_time = product / _mult;
 	_timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countingDown) userInfo:nil repeats:YES];
 }
 
 - (void) countingDown {
 	if (_time == 0){
-        
+		
 		[_timer invalidate];
 		_working = NO;
-
-        
+		NSString *text = @"Feito!";
+		_timerLabel.text = text;
 	}
 	else{
 		//		NSString *text = [NSString stringWithFormat: @"%d", _time];
@@ -204,10 +217,10 @@
 		_time -= 1;
 		//
 		//		NSLog(@"time producing: %d", _time);
+		NSString *text = [NSString stringWithFormat: @"%ds", _time];
+		_timerLabel.text = text;
 	}
 	
-	NSString *text = [NSString stringWithFormat: @"%d", _time];
-	_timerLabel.text = text;
 	
 	NSLog(@"time producing: %d", _time);
 }
